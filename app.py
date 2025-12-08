@@ -7,4 +7,4 @@ def hello_world():
     return 'We are running our first container - from CoderCo'
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=8080)
