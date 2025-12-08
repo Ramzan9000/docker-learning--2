@@ -1,14 +1,10 @@
 from flask import Flask
-import redis
 
 app = Flask(__name__)
-cache = redis.Redis(host='redis', port=6379)
 
 @app.route('/')
-def home():
-    return "Welcome to my Flask + Redis App!"
+def hello_world():
+    return 'We are running our first container - from CoderCo'
 
-@app.route('/count')
-def count():
-    count = cache.incr('visits')
-    return f"Visit count: {count}"
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
