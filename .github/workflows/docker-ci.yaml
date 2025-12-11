@@ -1,0 +1,26 @@
+name: Docker CI
+
+on:
+  push:
+    branches: [ main ]
+
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+  
+    steps:
+
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Build Docker image
+        run: docker build -t my-app .
+
+      - name: Run container
+        run: docker run --rm my-app
+      
+      - name: run tests 
+        run: test_app.py
